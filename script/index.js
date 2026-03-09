@@ -83,10 +83,10 @@ const displayLevelWord = (words) => {
 
   if(words.length == 0){
     wordContainer.innerHTML = `
-        <div class="text-center col-span-full rounded-xl py-10 space-y-6 font-bangla">
+        <div class="text-center col-span-full rounded-xl py-10 space-y-6 font-bangla bg-gradient-to-br from-slate-400 to-red-200">
         <img class="mx-auto" src="./assets/alert-error.png" />
-        <p class="text-xl font-medium text-gray-500">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
-        <h2 class="font-bold text-4xl">নেক্সট Lesson এ যান</h2>
+        <p class="text-xl font-medium text-gray-500 font-bangla">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+        <h2 class="font-bold text-4xl font-bangla">নেক্সট Lesson এ যান</h2>
       </div>
     `;
     manageSpinner(false);
@@ -97,7 +97,7 @@ const displayLevelWord = (words) => {
     console.log(word);
     const card = document.createElement('div');
     card.innerHTML = `
-        <div class="bg-white rounded-xl shadow-sm text-center py-10 px-5 space-y-4">
+        <div class="rounded-xl shadow-sm text-center py-10 px-5 space-y-4 bg-gradient-to-br from-slate-200 to-sky-300">
           <h2 class="font-bold text-2xl">${word.word ? word.word : "শব্দ পাওয়া যায়নি"}</h2>
           <p class="font-semibold">Meaning / Pronunciation</p>
           
