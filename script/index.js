@@ -1,5 +1,5 @@
 const createElements = (arr) => {
-  const htmlElements = arr.map(el => `<span class="btn">${el}</span>`);
+  const htmlElements = arr.map(el => `<span class="btn btn-soft btn-info my-3">${el}</span>`);
   return htmlElements.join(" ");
 }
 
@@ -94,7 +94,6 @@ const displayLevelWord = (words) => {
   }
 
   words.forEach(word => {
-    console.log(word);
     const card = document.createElement('div');
     card.innerHTML = `
         <div class="rounded-xl shadow-sm text-center py-10 px-5 space-y-4 bg-gradient-to-br from-slate-200 to-sky-300">
