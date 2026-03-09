@@ -27,7 +27,6 @@ const loadLessons = () => {
 
 const removeActive = () => {
   const lessonButtons = document.querySelectorAll('.lesson-btn');
-  // console.log(lessonButtons);
   lessonButtons.forEach(btn => btn.classList.remove('active'));
 }
 
