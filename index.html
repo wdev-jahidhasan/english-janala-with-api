@@ -44,10 +44,10 @@
           </div>
           <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li>
-              <a href="#word-container" class=""><i class="fa-solid fa-book-open"></i> Learn</a>
+              <a href="#level-section" class=""><i class="fa-solid fa-book-open"></i> Learn</a>
             </li>
             <li>
-              <a href="" class=""><i class="fa-solid fa-circle-question"></i> FAQ</a>
+              <a href="#faq-section" class=""><i class="fa-solid fa-circle-question"></i> FAQ</a>
             </li>
             
             <!-- <li>
@@ -69,10 +69,10 @@
       <div class="navbar-end hidden md:flex">
         <ul class="menu menu-horizontal px-1 space-x-4">
           <li>
-            <a href="#word-container" class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i> Learn</a>
+            <a href="#level-section" class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i> Learn</a>
           </li>
           <li>
-            <a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+            <a href="#faq-section" class="btn btn-outline btn-primary"><i class="fa-solid fa-circle-question"></i> FAQ</a>
           </li>
           
           <!-- <li>
@@ -96,8 +96,8 @@
     </div>
   </section>
 
-  <section>
-    <h2 class="text-4xl font-bold mb-8 text-center"><span class="text-sky-400">Let's</span> Learn Vocabulary</h2>
+  <section id="level-section">
+    <h2 class="text-2xl md:text-4xl font-bold mb-8 text-center"><span class="text-sky-400">Let's</span> Learn Vocabulary</h2>
 
     <!-- empty level container  -->
     <div id="level-container" class="flex gap-5 flex-wrap justify-center mx-2"></div>
@@ -145,6 +145,41 @@
       </div>
     </div>
   </dialog>
+
+  <!-- faq section -->
+  <section id="faq-section" class="px-4 md:px-20 my-8">
+    <h1 class="text-xl md:text-3xl font-bold mb-8 text-center"><span class="text-sky-500">Frequently</span> Asked Questions</h1>
+
+    <div class="collapse collapse-plus bg-gray-100 mb-3 border border-base-300">
+      <input type="radio" name="my-accordion-3" checked="checked" />
+      <div class="collapse-title font-semibold">1.How can I start learning English on this website?</div>
+      <div class="collapse-content text-sm">It is very easy. Just create an account and start dreaming in English.</div>
+    </div>
+    <div class="collapse collapse-plus bg-gray-100 mb-3 border border-base-300">
+      <input type="radio" name="my-accordion-3" />
+      <div class="collapse-title font-semibold">2. Is this website free to use?</div>
+      <div class="collapse-content text-sm">Yes, It is totally free. From today, you don't need to spend money to learn
+        English.</div>
+    </div>
+    <div class="collapse collapse-plus bg-gray-100 mb-3 border border-base-300">
+      <input type="radio" name="my-accordion-3" />
+      <div class="collapse-title font-semibold">3. Do I need to create an account?</div>
+      <div class="collapse-content text-sm">Yes, You need to create an account providing some basic information about
+        you. It will help us track your progress.</div>
+    </div>
+    <div class="collapse collapse-plus bg-gray-100 mb-3 border border-base-300">
+      <input type="radio" name="my-accordion-3" />
+      <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
+      <div class="collapse-content text-sm">Visit our site, maintain our routine and shuffle flashcards regularly.</div>
+    </div>
+    <div class="collapse collapse-plus bg-gray-100 mb-3 border border-base-300">
+      <input type="radio" name="my-accordion-3" />
+      <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
+      <div class="collapse-content text-sm">Yes, we offer a certificate after finishing the course. It will help you
+        prove your English fluency.</div>
+    </div>
+
+  </section>
 
 
   <script src="./script/index.js"></script>
