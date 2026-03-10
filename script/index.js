@@ -3,12 +3,14 @@ const createElements = (arr) => {
   return htmlElements.join(" ");
 }
 
+// pronounceWord function
 function pronounceWord(word) {
   const utterance = new SpeechSynthesisUtterance(word);
   utterance.lang = "en-EN";
   window.speechSynthesis.speak(utterance);
 }
 
+// manageSpinner function
 const manageSpinner = (status) => {
   if(status == true){
       document.getElementById('spinner').classList.remove('hidden');
@@ -19,17 +21,20 @@ const manageSpinner = (status) => {
   }
 }
 
+// loadLesson function
 const loadLessons = () => {
   fetch('https://openapi.programming-hero.com/api/levels/all')
     .then(res => res.json())
     .then(json => displayLessons(json.data));
 };
 
+// removeActive function
 const removeActive = () => {
   const lessonButtons = document.querySelectorAll('.lesson-btn');
   lessonButtons.forEach(btn => btn.classList.remove('active'));
 }
 
+// loadLevelWord function
 const loadLevelWord = (id) => {
     manageSpinner(true);
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
@@ -43,6 +48,7 @@ const loadLevelWord = (id) => {
     });
 };
 
+// loadWordDetail function
 const loadWordDetail = async (id) => {
   const url = `https://openapi.programming-hero.com/api/word/${id}`;
   const res = await fetch (url);
@@ -50,6 +56,7 @@ const loadWordDetail = async (id) => {
   displayWordDetails(details.data);
 }
 
+// displayWordDetails function
 const displayWordDetails = (word) => {
   console.log(word);
   const detailsBox = document.getElementById('details-container');
@@ -76,6 +83,7 @@ const displayWordDetails = (word) => {
   document.getElementById('word_modal').showModal();
 }
 
+// displayLevelWord function
 const displayLevelWord = (words) => {
   const wordContainer = document.getElementById('word-container');
   wordContainer.innerHTML = "";
@@ -84,7 +92,7 @@ const displayLevelWord = (words) => {
     wordContainer.innerHTML = `
         <div class="text-center col-span-full rounded-xl py-10 space-y-6 font-bangla bg-gradient-to-br from-slate-400 to-red-200">
         <img class="mx-auto" src="./assets/alert-error.png" />
-        <p class="tex-lg md:text-xl font-medium text-gray-500 font-bangla">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+        <p class="text-lg md:text-xl font-medium text-gray-500 font-bangla">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
         <h2 class="font-semibold md:font-bold text-2xl md:text-4xl font-bangla">নেক্সট Lesson এ যান</h2>
       </div>
     `;
@@ -102,7 +110,7 @@ const displayLevelWord = (words) => {
           <div class="text-2xl font-medium font-bangla">"${word.meaning ? word.meaning : "অর্থ পাওয়া যায়নি"} / ${word.pronunciation ? word.pronunciation : "উচ্চারণ পাওয়া যায়নি"}"</div>
           <div class="flex justify-between items-center">
               <button onclick="loadWordDetail(${word.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
-              <button onclick="pronounceWord('${word.word}')" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high"></i></button>  
+              <button onclick="pronounceWord('${word.word})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high"></i></button>  
           </div>
        </div>
     `;
@@ -111,18 +119,15 @@ const displayLevelWord = (words) => {
   manageSpinner(false);
 };
 
-displayLessons = (lessons) => {
-  // step 1: get the container
+// displayLesson function
+const displayLessons = (lessons) => {
   const levelContainer = document.getElementById('level-container');
   levelContainer.innerHTML = "";
-  // step 2: get into every lessons
   for (const lesson of lessons) {
-    // step 3: create element
     const btnDiv = document.createElement('div');
     btnDiv.innerHTML = `
         <button id="lesson-btn-${lesson.level_no}" onclick="loadLevelWord(${lesson.level_no})" class="btn btn-outline btn-primary lesson-btn"><i class="fa-solid fa-book-open"></i> Lesson ${lesson.level_no} </button>
     `
-    // step 4: append into container
     levelContainer.append(btnDiv);
   }
 
@@ -130,17 +135,39 @@ displayLessons = (lessons) => {
 
 loadLessons();
 
+// search functionality
 document.getElementById('btn-search').addEventListener('click', ()=>{
       removeActive();
     const input = document.getElementById('input-search');
     const searchValue = input.value.trim().toLowerCase();
 
+    manageSpinner(true);
     fetch('https://openapi.programming-hero.com/api/words/all')
     .then(res => res.json())
     .then(data => {
         const allWords = data.data;
         console.log(allWords);
-        const filterWords = allWords.filter(word => word.word.toLowerCase().includes(searchValue));
+        const filterWords = allWords.filter(word => word.word && word.word.toLowerCase().includes(searchValue));
         displayLevelWord(filterWords);
     });
-})
+});
+
+// login functionality 
+const loginBtn = document.getElementById('login-btn');
+loginBtn.addEventListener('click', () => {
+  const user = document.getElementById('user');
+  const pass = document.getElementById('pass');
+  if(user.value === "e-janala" && pass.value === "123456"){
+    document.getElementById('hero').classList.add('hidden');
+
+    document.getElementById('navbar').classList.remove('primarily-hidden');
+    document.getElementById('level-section').classList.remove('primarily-hidden');
+    document.getElementById('search').classList.remove('primarily-hidden');
+    document.getElementById('word-container').classList.remove('primarily-hidden');
+    document.getElementById('faq-section').classList.remove('primarily-hidden');
+    user.value = "";
+    pass.value = "";
+  }else{
+    alert('Invalid Username or Password');
+  };
+});

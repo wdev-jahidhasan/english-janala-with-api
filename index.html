@@ -32,7 +32,7 @@
 
   <header class="sticky top-0 z-50">
     <!-- navbar -->
-    <div class="navbar bg-base-100 shadow-sm px-4 md:px-12 flex justify-between">
+    <div id="navbar" class="navbar bg-base-100 shadow-sm px-4 md:px-12 flex justify-between primarily-hidden">
 
       <div class="navbar-start md:hidden">
         <div class="dropdown">
@@ -42,7 +42,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
             <li>
               <a href="#level-section" class=""><i class="fa-solid fa-book-open"></i> Learn</a>
             </li>
@@ -86,7 +86,7 @@
   </header>
 
   <!-- hero section -->
-  <section class="flex flex-col-reverse md:flex-row gap-10 justify-between items-center py-5 w-11/12 mx-auto">
+  <section id="hero" class="flex flex-col-reverse md:flex-row gap-10 justify-between items-center py-5 w-11/12 mx-auto">
     <div>
       <div class="content flex-1 text-center md:text-left">
         <h2 class="text-4xl font-bold mb-8"><span class="text-sky-400">English</span> is Easy!!</h2>
@@ -111,7 +111,7 @@
   </section>
 
   <!-- level section -->
-  <section id="level-section">
+  <section id="level-section" class="mt-10 primarily-hidden">
     <h2 class="text-2xl md:text-4xl font-bold mb-8 text-center"><span class="text-sky-400">Let's</span> Learn Vocabulary
     </h2>
 
@@ -120,7 +120,7 @@
   </section>
 
   <!-- search section -->
-  <section class="flex justify-center my-10">
+  <section id="search" class="flex justify-center my-10 primarily-hidden">
     <div class="join">
       <div>
         <label class="input validator join-item">
@@ -137,7 +137,7 @@
   </section>
 
   <!-- empty word section -->
-  <section id="word-container" class="w-11/12 mx-auto my-10 grid md:grid-cols-3 gap-5">
+  <section id="word-container" class="w-11/12 mx-auto my-10 grid md:grid-cols-3 gap-5 primarily-hidden">
 
     <div
       class="text-center col-span-full rounded-xl p-10 md:py-24 space-y-6 font-bangla bg-gradient-to-br from-slate-400 to-red-200">
@@ -164,7 +164,7 @@
   </dialog>
 
   <!-- faq section -->
-  <section id="faq-section" class="px-4 md:px-20 my-8">
+  <section id="faq-section" class="px-4 md:px-20 my-8 primarily-hidden">
     <h1 class="text-xl md:text-3xl font-bold mb-8 text-center"><span class="text-sky-500">Frequently</span> Asked
       Questions</h1>
 
