@@ -169,7 +169,7 @@ const loginBtn = document.getElementById('login-btn');
 loginBtn.addEventListener('click', () => {
   const user = document.getElementById('user');
   const pass = document.getElementById('pass');
-  if (user.value === "e-janala" && pass.value === "123456") {
+  if (user.value === "test" && pass.value === "e-janala") {
     document.getElementById('hero').classList.add('hidden');
 
     document.getElementById('navbar').classList.remove('primarily-hidden');
