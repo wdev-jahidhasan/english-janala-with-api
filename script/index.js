@@ -2,7 +2,7 @@ const createElements = (arr) => {
   if (!arr || arr.length === 0) {
     return `<span class="font-bangla">কোনো সমার্থক খুঁজে পাওয়া যায়নি</span>`
   } else {
-    const htmlElements = arr.map(el => `<span class="btn btn-soft btn-info my-3">${el}</span>`);
+    const htmlElements = arr.map(el => `<span class="btn btn-soft btn-info my-3">${el} <i onclick="pronounceWord('${el}')" class="fa-solid fa-volume-high"></i> </span>`);
     return htmlElements.join(" ");
   }
 };
@@ -62,7 +62,6 @@ const loadWordDetail = async (id) => {
 
 // displayWordDetails function
 const displayWordDetails = (word) => {
-  console.log(word);
   const detailsBox = document.getElementById('details-container');
   detailsBox.innerHTML = `
         <div class="">
