@@ -145,7 +145,10 @@ document.getElementById('btn-search').addEventListener('click', () => {
   const searchValue = input.value.trim().toLowerCase();
 
   if (searchValue === "") {
-    alert('প্রথমে শব্দ লিখুন')
+    Swal.fire({
+      icon: "warning",
+      text: "Please enter a word first"
+    });
     return
   }
 
@@ -179,6 +182,10 @@ loginBtn.addEventListener('click', () => {
     user.value = "";
     pass.value = "";
   } else {
-    alert('Invalid Username or Password');
+    Swal.fire({
+      icon: "error",
+      text: "Invalid Username or Password",
+    });
+
   };
 });
