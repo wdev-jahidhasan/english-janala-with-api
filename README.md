@@ -1,24 +1,63 @@
-# ENGLISH JANALA
+# 📘 English Janala
 
-🔹GitHub Repository Link: https://github.com/wdev-jahidhasan/english-janala-with-api
-🔹Live Site Link: https://api-driven-english-janala.netlify.app/
+🔗 **Live Site:** https://api-driven-english-janala.netlify.app/
 
-English Janala is an API-driven vocabulary learning website. Users have to log in to the website using the demo credentials mentioned on the login page for learning vocabulary. On clicking the level buttons, different vocabulary cards will be opened. The users can also see the word details on clicking the info icon, and can listen to the pronunciation on clicking the sound icon
+English Janala is an API-driven vocabulary learning web application designed to help users improve their English vocabulary in an interactive and user-friendly way. Users can explore words by lessons, view detailed information, and listen to pronunciations.
 
-Key Features: 
-🔹Mobile Responsive Website
-🔹Login Page 
-🔹Login Functionality
-🔹Vocabulary Card by Different Lessons
-🔹Vocabulary Pronuncitation on Clicking sound icon 
-🔹Open Modal on Clicking Info Icon
-🔹Functional Learn, FAQ Button with Smooth Scrolling
-🔹Search Functionality
+---
 
-Technologies I used: 
-🔹HTML5
-🔹Tailwind CSS
-🔹DaisyUI
-🔹Vanilla JavaScript
-🔹DOM
-🔹API Integration
+## 🚀 Features
+
+- 🔐 Login system using demo credentials  
+- 📱 Fully mobile responsive design  
+- 📚 Vocabulary cards based on different lessons  
+- 🔍 Search functionality to find words easily  
+- 🔊 Pronunciation feature (click sound icon)  
+- ℹ️ Word details modal (click info icon)  
+- 📖 Learn & FAQ sections with smooth scrolling  
+- ⚡ Fast and dynamic API-based data loading  
+
+---
+
+## 🛠️ Technologies Used
+
+- HTML5  
+- Tailwind CSS  
+- DaisyUI  
+- Vanilla JavaScript  
+- DOM Manipulation  
+- API Integration  
+
+---
+
+## 🔑 How to Use
+
+1. Go to the live site  
+2. Login using demo credentials (provided on login page)  
+3. Select any lesson to explore vocabulary  
+4. Click:
+   - 🔊 Sound icon → to hear pronunciation  
+   - ℹ️ Info icon → to see word details  
+5. Use search bar to find specific words  
+
+---
+
+## 🎯 Project Purpose
+
+This project was built to practice:
+- Working with APIs  
+- DOM manipulation  
+- Creating interactive UI  
+- Building responsive layouts  
+
+---
+
+## 🙌 Acknowledgements
+
+Thanks to all the resources and tools that made this project possible.
+
+---
+
+## 📬 Contact
+
+If you have any feedback or suggestions, feel free to reach out!
